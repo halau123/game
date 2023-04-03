@@ -1,39 +1,41 @@
 2a60927148abd1d33b818b535e306557
-::res://::1679934989
-icon.svg::CompressedTexture2D::3011849319548529916::1678827938::1679934935::1::::<><>::
-::res://assets/::1679925875
-::res://assets/sprites/::1679934935
-AnimationSheet_Character.png::CompressedTexture2D::3960509309400799696::1678900884::1679934935::1::::<><>::
-Bow.png::CompressedTexture2D::2393508639611907565::1679606634::1679934935::1::::<><>::
-Girl-Sheet.png::CompressedTexture2D::1351863972331332684::1678912060::1679934935::1::::<><>::
-::res://assets/tilesets/::1679934935
-Cliff.png::CompressedTexture2D::2552733960672280747::1678828130::1679934935::1::::<><>::
-Environment.png::CompressedTexture2D::8477660725951475103::1678828130::1679934935::1::::<><>::
-Ground Tileset.png::CompressedTexture2D::4483701833420548570::1678828130::1679934935::1::::<><>::
-house.png::CompressedTexture2D::4749255633700038698::1678998184::1679934935::1::::<><>::
-house_int.png::CompressedTexture2D::8422556554504455365::1679346976::1679934935::1::::<><>::
-Rocks.png::CompressedTexture2D::5917833659271637344::1678828130::1679934935::1::::<><>::
-Stairs Bridge.png::CompressedTexture2D::5581415045565065296::1678828130::1679934935::1::::<><>::
-Stone Path Tileset.png::CompressedTexture2D::8101872219545607386::1678828130::1679934935::1::::<><>::
-Tileset.png::CompressedTexture2D::3995497866226059136::1678828130::1679934935::1::::<><>::
-Trees.png::CompressedTexture2D::2424713821939142324::1678828130::1679934935::1::::<><>::
-Water Flora.png::CompressedTexture2D::1076193409294130874::1678828130::1679934935::1::::<><>::
-Water Tileset.png::CompressedTexture2D::426569829724840461::1678828130::1679934935::1::::<><>::
-::res://characters/::1679930374
-main.tscn::PackedScene::4781641602555892551::1679930374::0::1::::<><>::res://scripts/character_main_movement.gd<>uid://ti4acpdxff1m<>uid://bado0cwtk6tbh<>res://scripts/bow_pivot.gd
-::res://scenes/::1679925875
-::res://scenes/items/::1679608724
-::res://scenes/world_1/::1679930373
-scene_transition.tscn::PackedScene::1977103420724578909::1679427012::0::1::::<><>::res://scripts/scene_changes/scene_transition.gd
-world_1_home.tscn::PackedScene::2190129705853092240::1679930372::0::1::::<><>::uid://dr87jm7bqfbsv<>uid://caei66aijw8d4<>res://scripts/scene_changes/world1_l1_exithouse.gd
-world_1_level_1.tscn::PackedScene::1523287685538752116::1679930373::0::1::::<><>::uid://b4466cyswsklm<>uid://bw6pjbvcvovg7<>uid://bassxg30ju3wi<>uid://gcvsppfaqp4x<>uid://bcmtfju11aejj<>uid://dnouwfoxdtw0i<>uid://clrxdco67xrwi<>uid://caei66aijw8d4<>uid://b8wtstwgf167o<>uid://cqkv4di4oecjg<>res://scripts/Camera2D.gd<>res://scripts/scene_changes/world1_l1_enter_house.gd
-::res://scripts/::1679925875
-bow.gd::GDScript::-1::1679611312::0::1::::<>Sprite2D<>::
-bow_pivot.gd::GDScript::-1::1679613140::0::1::::<>Node2D<>::
-Camera2D.gd::GDScript::-1::1679363784::0::1::::<>Camera2D<>::
-character_main_movement.gd::GDScript::-1::1679634054::0::1::::<>CharacterBody2D<>::
-scene_change.gd::GDScript::-1::1679355038::0::1::::<>RefCounted<>::
-::res://scripts/scene_changes/::1679925875
-scene_transition.gd::GDScript::-1::1679437606::0::1::::<>CanvasLayer<>::
-world1_l1_enter_house.gd::GDScript::-1::1679437910::0::1::::<>Area2D<>::
-world1_l1_exithouse.gd::GDScript::-1::1679437904::0::1::::<>Area2D<>::
+::res://::1680141203
+icon.svg::CompressedTexture2D::3011849319548529916::1678827937::1678827942::1::::<><>::
+::res://assets/::1678900949
+::res://assets/sprites/::1680133728
+AnimationSheet_Character.png::CompressedTexture2D::3960509309400799696::1678900883::1678900965::1::::<><>::
+Bow.png::CompressedTexture2D::2393508639611907565::1679606633::1679606634::1::::<><>::
+Girl-Sheet.png::CompressedTexture2D::1351863972331332684::1678912058::1678912082::1::::<><>::
+oil_slime.png::CompressedTexture2D::3184324815437455462::1680133723::1680133728::1::::<><>::
+::res://assets/tilesets/::1679346976
+Cliff.png::CompressedTexture2D::2552733960672280747::1678828129::1678828132::1::::<><>::
+Environment.png::CompressedTexture2D::8477660725951475103::1678828129::1678828132::1::::<><>::
+Ground Tileset.png::CompressedTexture2D::4483701833420548570::1678828129::1678828132::1::::<><>::
+house.png::CompressedTexture2D::4749255633700038698::1678998182::1678998186::1::::<><>::
+house_int.png::CompressedTexture2D::8422556554504455365::1679346974::1679346976::1::::<><>::
+Rocks.png::CompressedTexture2D::5917833659271637344::1678828129::1678828132::1::::<><>::
+Stairs Bridge.png::CompressedTexture2D::5581415045565065296::1678828129::1678828132::1::::<><>::
+Stone Path Tileset.png::CompressedTexture2D::8101872219545607386::1678828129::1678828132::1::::<><>::
+Tileset.png::CompressedTexture2D::3995497866226059136::1678828129::1678828132::1::::<><>::
+Trees.png::CompressedTexture2D::2424713821939142324::1678828129::1678828132::1::::<><>::
+Water Flora.png::CompressedTexture2D::1076193409294130874::1678828129::1678828132::1::::<><>::
+Water Tileset.png::CompressedTexture2D::426569829724840461::1678828129::1678828132::1::::<><>::
+::res://characters/::1680136411
+enemy_oil_slime.tscn::PackedScene::4303257769648369302::1680136411::0::1::::<><>::uid://blmrmnlkq67wc
+main.tscn::PackedScene::4781641602555892551::1680132383::0::1::::<><>::res://scripts/character_main_movement.gd<>uid://ti4acpdxff1m<>uid://bado0cwtk6tbh<>res://scripts/bow_pivot.gd
+::res://scenes/::1679607077
+::res://scenes/items/::1679608723
+::res://scenes/world_1/::1680136411
+scene_transition.tscn::PackedScene::1977103420724578909::1679427010::0::1::::<><>::res://scripts/scene_changes/scene_transition.gd
+world_1_home.tscn::PackedScene::2190129705853092240::1680136411::0::1::::<><>::uid://dr87jm7bqfbsv<>uid://caei66aijw8d4<>res://scripts/scene_changes/world1_l1_exithouse.gd
+world_1_level_1.tscn::PackedScene::1523287685538752116::1680136411::0::1::::<><>::uid://b4466cyswsklm<>uid://bw6pjbvcvovg7<>uid://bassxg30ju3wi<>uid://gcvsppfaqp4x<>uid://bcmtfju11aejj<>uid://dnouwfoxdtw0i<>uid://clrxdco67xrwi<>uid://caei66aijw8d4<>uid://b8wtstwgf167o<>uid://cqkv4di4oecjg<>res://scripts/Camera2D.gd<>res://scripts/scene_changes/world1_l1_enter_house.gd
+::res://scripts/::1679634053
+bow.gd::GDScript::-1::1679611310::0::1::::<>Sprite2D<>::
+bow_pivot.gd::GDScript::-1::1679613138::0::1::::<>Node2D<>::
+Camera2D.gd::GDScript::-1::1679363782::0::1::::<>Camera2D<>::
+character_main_movement.gd::GDScript::-1::1679634053::0::1::::<>CharacterBody2D<>::
+scene_change.gd::GDScript::-1::1679355036::0::1::::<>RefCounted<>::
+::res://scripts/scene_changes/::1679437909
+scene_transition.gd::GDScript::-1::1679437605::0::1::::<>CanvasLayer<>::
+world1_l1_enter_house.gd::GDScript::-1::1679437909::0::1::::<>Area2D<>::
+world1_l1_exithouse.gd::GDScript::-1::1679437902::0::1::::<>Area2D<>::

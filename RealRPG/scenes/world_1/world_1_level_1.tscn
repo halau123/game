@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://vx5lconmckr1"]
+[gd_scene load_steps=26 format=3 uid="uid://vx5lconmckr1"]
 
 [ext_resource type="Texture2D" uid="uid://b4466cyswsklm" path="res://assets/tilesets/Ground Tileset.png" id="1_1f5ai"]
 [ext_resource type="Texture2D" uid="uid://bw6pjbvcvovg7" path="res://assets/tilesets/Tileset.png" id="2_pqgat"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cqkv4di4oecjg" path="res://assets/tilesets/Rocks.png" id="8_441vj"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="10_8d3qr"]
 [ext_resource type="Script" path="res://scripts/scene_changes/world1_l1_enter_house.gd" id="12_px6ge"]
+[ext_resource type="PackedScene" uid="uid://b2ksa56qbgq7w" path="res://characters/enemy_oil_slime.tscn" id="13_wrf14"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_47aue"]
 texture = ExtResource("1_1f5ai")
@@ -3960,6 +3961,11 @@ size = Vector2(102, 55)
 [sub_resource type="CircleShape2D" id="CircleShape2D_akscb"]
 radius = 11.0454
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_vjpk7"]
+vertices = PackedVector2Array(673, 396, 673, 517, 633, 517, 633, 459, 633, 397, 633, 441, 633, 514, 502, 514, 503, 439, 607, 396, 607, 438, 551, 437, 552, 396, 485, 397, 486, 454, 413, 455, 414, 401, 531, 396, 530, 434, 501, 434, 498, 397)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 6, 7, 8), PackedInt32Array(9, 10, 11, 12), PackedInt32Array(13, 14, 15, 16), PackedInt32Array(17, 18, 19, 20)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(633, 397, 633, 459, 633, 517, 673, 517, 673, 396), PackedVector2Array(503, 439, 502, 514, 633, 514, 633, 441), PackedVector2Array(607, 396, 607, 438, 551, 437, 552, 396), PackedVector2Array(414, 401, 413, 455, 486, 454, 485, 397), PackedVector2Array(498, 397, 501, 434, 530, 434, 531, 396)])
+
 [node name="world_1_level_1" type="Node2D"]
 position = Vector2(-58, -42)
 
@@ -4027,6 +4033,13 @@ script = ExtResource("12_px6ge")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(550, 156)
 shape = SubResource("CircleShape2D_akscb")
+
+[node name="enemy_oil_slime" parent="." instance=ExtResource("13_wrf14")]
+position = Vector2(578, 423)
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+visible = false
+navigation_polygon = SubResource("NavigationPolygon_vjpk7")
 
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]

@@ -1,0 +1,164 @@
+[gd_scene load_steps=23 format=3 uid="uid://b2ksa56qbgq7w"]
+
+[ext_resource type="Texture2D" uid="uid://blmrmnlkq67wc" path="res://assets/sprites/oil_slime.png" id="1_fskmg"]
+[ext_resource type="Script" path="res://scripts/enemy_oil_slime_movement.gd" id="1_rumat"]
+
+[sub_resource type="Animation" id="Animation_xmlvr"]
+resource_name = "oil_slime_jump_down"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [0, 1, 0]
+}
+
+[sub_resource type="Animation" id="Animation_g8ys6"]
+resource_name = "oil_slime_jump_left"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [3, 4, 3]
+}
+
+[sub_resource type="Animation" id="Animation_ui4sv"]
+resource_name = "oil_slime_jump_right"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [5, 4, 5]
+}
+
+[sub_resource type="Animation" id="Animation_xxmjj"]
+resource_name = "oil_slime_junp_up"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [6, 7, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7dpgu"]
+_data = {
+"oil_slime_jump_down": SubResource("Animation_xmlvr"),
+"oil_slime_jump_left": SubResource("Animation_g8ys6"),
+"oil_slime_jump_right": SubResource("Animation_ui4sv"),
+"oil_slime_junp_up": SubResource("Animation_xxmjj")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wm525"]
+animation = &"oil_slime_jump_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1wqwh"]
+animation = &"oil_slime_junp_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_1h7g6"]
+animation = &"oil_slime_jump_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_38psl"]
+animation = &"oil_slime_jump_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_ihpa7"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_wm525")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_1wqwh")
+blend_point_1/pos = Vector2(0, -0.9)
+blend_point_2/node = SubResource("AnimationNodeAnimation_1h7g6")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_38psl")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_iktwd"]
+animation = &"oil_slime_jump_down"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_3bciy"]
+animation = &"oil_slime_junp_up"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_u1w8y"]
+animation = &"oil_slime_jump_left"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_ytcpd"]
+animation = &"oil_slime_jump_right"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_jav0g"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_iktwd")
+blend_point_0/pos = Vector2(0, 1)
+blend_point_1/node = SubResource("AnimationNodeAnimation_3bciy")
+blend_point_1/pos = Vector2(0, -0.9)
+blend_point_2/node = SubResource("AnimationNodeAnimation_u1w8y")
+blend_point_2/pos = Vector2(-1, 0)
+blend_point_3/node = SubResource("AnimationNodeAnimation_ytcpd")
+blend_point_3/pos = Vector2(1, 0)
+blend_mode = 1
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hnph5"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_gd62a"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_0sej0"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_xx3yn"]
+states/End/position = Vector2(606, 100)
+states/Idle/node = SubResource("AnimationNodeBlendSpace2D_ihpa7")
+states/Idle/position = Vector2(344, 100)
+states/Start/position = Vector2(201, 100)
+states/Walk/node = SubResource("AnimationNodeBlendSpace2D_jav0g")
+states/Walk/position = Vector2(494, 100)
+transitions = ["Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_hnph5"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_gd62a"), "Start", "Idle", SubResource("AnimationNodeStateMachineTransition_0sej0")]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id="AnimationNodeStateMachinePlayback_mgcxf"]
+
+[node name="enemy_oil_slime" type="CharacterBody2D"]
+script = ExtResource("1_rumat")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-4.5, 4.5)
+scale = Vector2(0.71875, 0.71875)
+texture = ExtResource("1_fskmg")
+hframes = 3
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_7dpgu")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeStateMachine_xx3yn")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+process_callback = 0
+parameters/playback = SubResource("AnimationNodeStateMachinePlayback_mgcxf")
+parameters/Idle/blend_position = Vector2(-0.00438982, 0.868996)
+parameters/Walk/blend_position = Vector2(0, 0)
+
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
